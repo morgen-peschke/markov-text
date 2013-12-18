@@ -1,35 +1,34 @@
 #!/usr/bin/env python
 #################################################################################
-#                                                                               #
-# Author: Morgen Peschke                                                        #
-# Date:   Dec 15th, 2013                                                        #
-#                                                                               #
-# Description: This is a random text generator that uses the Markov Chaining    #
-#              technique to create text with passing similarity to valid        #
-#              text. This is an exploration of the idea of graceful degradation,#
-#              English by attempting to provide a match of the requested order, #
-#              but returning matches of lower orders when that is not           #
-#              possible. In this manner the algorithm attempts to recover from  #
-#              an otherwise fatal dead end.                                     #
-#                                                                               #
-# Usage: ./markov.py <file 1> <file 2> ... <file n>                             #
-#                                                                               #
-#        The script will read in and will attempt to create a string of random  #
-#        words of the specified length and order. Customizing the default       #
-#        behavior is handled in the constructor. For more control the script    #
-#        can be imported an used as a library.                                  #
-#                                                                               #
-# Acknowledgments: Although the code has massively diverged from the sample     #
-#                  code, and has been basically been rebuild from scratch, the  #
-#                  genesis of this script came from the sample code provided at #
-#                  http://xkcd.com/markov.py.txt as part of the XKCD "What if?" #
-#                  titled "Phone Keypad" [http://what-if.xkcd.com/75/].         #
-#                                                                               #
-#                  The article provided the impetus for the creation of this    #
-#                  script, and as such, I would be remiss to neglect giving     #
-#                  credit where it is due.                                      #
-#                                                                               #
-#################################################################################
+#
+# Author: Morgen Peschke
+# Date:   Dec 15th, 2013
+#
+# Description: This is a random text generator that uses the Markov Chaining
+#              technique to create text with passing similarity to valid English
+#              text. This is also an exploration of the idea of graceful
+#              degradation, by attempting to provide a match of the requested
+#              order, but returning matches of lower orders when that is not
+#              possible. In this manner the algorithm attempts to recover from
+#              an otherwise fatal dead end chain.
+#
+# Usage: ./markov.py <file 1> <file 2> ... <file n>
+#
+#        The script will read in and will attempt to create a string of random
+#        words of the specified length and order. Customizing the default
+#        behavior is handled in the constructor. For more control the script
+#        can be imported an used as a library.
+#
+# Acknowledgments: Although the code has massively diverged from the sample
+#                  code, and has been basically been rebuild from scratch, the
+#                  genesis of this script came from the sample code provided at
+#                  http://xkcd.com/markov.py.txt as part of the XKCD "What if?"
+#                  titled "Phone Keypad" [http://what-if.xkcd.com/75/].
+#
+#                  The article provided the impetus for the creation of this
+#                  script, and as such, I would be remiss to neglect giving
+#                  credit where it is due.
+#
 import random
 import sys
 import copy
