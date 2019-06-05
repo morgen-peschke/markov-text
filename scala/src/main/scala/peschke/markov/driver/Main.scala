@@ -14,7 +14,7 @@ import peschke.markov.{MarkovForrest, SentenceGenerator}
 
 object Main extends IOApp {
   private def generateSeed(overrideSeedOpt: Option[Long]) =
-    overrideSeedOpt.fold(IO(Seed(System.currentTimeMillis())))(Seed(_).pure[IO])
+    overrideSeedOpt.fold(IO(Seed.random))(Seed(_).pure[IO])
 
   private def generateSentences(generator: SentenceGenerator,
                                 rngSeed: Seed,

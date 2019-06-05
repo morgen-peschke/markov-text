@@ -69,6 +69,7 @@ object RandomNumberGenerator {
     (newSeed, newSeed.value * 0x2545F4914F6CDD1DL)
   }
   object Seed {
+    def random: Seed = Seed(System.currentTimeMillis())
     implicit val show: Show[Seed] = Show.show(_.value.toString)
   }
 }
